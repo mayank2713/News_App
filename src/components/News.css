@@ -1,0 +1,33 @@
+/* Add CSS for button animations */
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-animated::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.btn-animated:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-animated:active::before {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Add smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
